@@ -16,12 +16,12 @@ const Home = () => {
         const newRecettes = [...recettes];
         newRecettes.splice(index, 1);
         setRecettes(newRecettes);
-      };
-    
-      const addRecipe = (recipe: Recipe) => {
-        const newRecettes = [...recettes, recipe];
-        setRecettes(newRecettes);
-      };
+    };
+
+    const addRecipe = (recipe: Recipe) => {
+      const newRecettes = [...recettes, recipe];
+      setRecettes(newRecettes);
+    };
 
     return (
         <div>
