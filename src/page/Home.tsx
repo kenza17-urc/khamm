@@ -1,10 +1,15 @@
 
+import RecipeList from "../component/Recette/RecipeList";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <h1>Recette</h1>
+      <RecipeList />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
+
 
