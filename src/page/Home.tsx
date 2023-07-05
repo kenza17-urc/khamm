@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { useState } from 'react';
 import FormRecette from '../component/Recette/FormRecette';
@@ -31,3 +32,15 @@ const Home = () => {
 };
 
 export default Home;
+=======
+
+
+const Home = () => {
+  return (
+    <div>Home</div>
+  )
+}
+
+export default Home
+
+>>>>>>> 4ad48de19979f1d0cc3c91ff481e21da0c73bc77
