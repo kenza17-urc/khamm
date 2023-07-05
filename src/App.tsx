@@ -1,12 +1,12 @@
-
-import './App.css'
+import "./App.css";
+import { RecetteProvider } from "./lib/contexts/recetteContext";
 
 function App() {
- 
-
   return (
-    <div></div>
-  )
+    <RecetteProvider>
+      <div></div>
+    </RecetteProvider>
+  );
 }
 
-export default App
+export default App;
