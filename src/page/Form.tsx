@@ -17,23 +17,10 @@ const Home = () => {
     setRecettes(newRecettes);
   };
 
-<<<<<<< HEAD
-    const deleteRecipe = (index: number) => {
-        const newRecettes = [...recettes];
-        newRecettes.splice(index, 1);
-        setRecettes(newRecettes);
-    };
-
-    const addRecipe = (recipe: Recipe) => {
-      const newRecettes = [...recettes, recipe];
-      setRecettes(newRecettes);
-    };
-=======
   const addRecipe = (recipe: Recipe) => {
     const newRecettes = [...recettes, recipe];
     setRecettes(newRecettes);
   };
->>>>>>> 4ad48de19979f1d0cc3c91ff481e21da0c73bc77
 
   return (
     <div>
