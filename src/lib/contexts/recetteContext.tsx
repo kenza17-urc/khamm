@@ -5,6 +5,7 @@ const RecetteContext = createContext<{
   addRecette: (recette: Omit<Recette, "id">) => void;
   removeRecette: (id: string) => void;
   getRecette: (id: string) => Recette | undefined;
+  recettes: Recette[];
 }>({
   addRecette: () => {
     return;
@@ -13,6 +14,7 @@ const RecetteContext = createContext<{
     return;
   },
   getRecette: () => undefined,
+  recettes: [],
 });
 
 const randomId = () => {
@@ -52,6 +54,7 @@ export const RecetteProvider = ({
         addRecette,
         removeRecette,
         getRecette,
+        recettes,
       }}
     >
       {children}
