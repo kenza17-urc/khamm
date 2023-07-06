@@ -24,7 +24,7 @@ const Home = () => {
 
   return (
     <div>
-      <FormRecette onSubmit={addRecipe} />
+      <FormRecette  />
     </div>
   );
 };
