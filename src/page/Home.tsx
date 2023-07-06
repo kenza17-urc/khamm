@@ -1,11 +1,17 @@
-
+import './Home.css'
 import React, { useState } from "react";
 import RecipeList from "../component/Recette/RecipeList";
 import backgroundImage from "../lib/img/19.jpg";
-
+import SearchBar from "../component/SearchFilter/SearchBar";
 const Home = () => {
   const [filterTags, setFilterTags] = useState<string[]>([]);
   const [filterDuration, setFilterDuration] = useState<number | null>(null);
+  const [termSearch, setTermSearch] = useState<string>("");
+
+  const handleSearch = (searchTerm: string) => {
+    console.log(`Searching for ${searchTerm}`);
+    setTermSearch(searchTerm);
+  };
 
   const handleTagChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const tagName = e.target.value;
@@ -34,11 +40,12 @@ const Home = () => {
         }}
       ></div>
       <h1>Recette</h1>
-      <div>
+      <div className='bloc-filter'>
         <h2>Filtre:</h2>
+        <div> <SearchBar onSearch={handleSearch} /></div>
         <div>
           <label>
-            Tags:
+            Par catégories:
             <input
               type="checkbox"
               value="citron"
@@ -47,6 +54,7 @@ const Home = () => {
             />{" "}
             citron
           </label>
+
           <label>
             <input
               type="checkbox"
@@ -56,6 +64,7 @@ const Home = () => {
             />{" "}
             Curry
           </label>
+
           <label>
             <input
               type="checkbox"
@@ -65,10 +74,12 @@ const Home = () => {
             />{" "}
             salade
           </label>
+
         </div>
+
         <div>
           <label>
-            Durée (minutes):
+            Par durée (minutes):
             <input
               type="number"
               value={filterDuration || ""}
@@ -76,8 +87,9 @@ const Home = () => {
             />
           </label>
         </div>
+
       </div>
-      <RecipeList filterTags={filterTags} filterDuration={filterDuration} />
+      <RecipeList filterTags={filterTags} filterDuration={filterDuration} termSearch={termSearch} />
     </div>
   );
 };
