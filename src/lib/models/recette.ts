@@ -9,6 +9,7 @@ export interface Recette {
 }
 
 export interface Ingredient {
+  id: string;
   nom: string;
   quantite: number;
   unite: string;

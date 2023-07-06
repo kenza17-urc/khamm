@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Layout/Navbar";
 import Home from "./page/Home";
-import Form from './page/Form'
+import Form from "./page/Form"
 
 import { RecetteProvider } from "./lib/contexts/recetteContext";
 import DetailRecette from "./page/DetailRecette";

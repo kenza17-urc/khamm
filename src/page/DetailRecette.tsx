@@ -4,19 +4,19 @@ import { useRecette } from "../lib/contexts/recetteContext";
 import { Recette } from "../lib/models/recette";
 
 function minuteFormat(minutes: number) {
-  const hours = Math.floor(minutes / 60); // Get the whole number of hours
-  const remainingMinutes = minutes % 60; // Get the remaining minutes
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60; 
 
   let result = "";
   if (hours > 0) {
-    result += hours + " heure" + (hours > 1 ? "s" : ""); // Include hours in the string
+    result += hours + " heure" + (hours > 1 ? "s" : ""); 
   }
   if (remainingMinutes > 0) {
     result +=
-      " " + remainingMinutes + " minute" + (remainingMinutes > 1 ? "s" : ""); // Include remaining minutes in the string
+      " " + remainingMinutes + " minute" + (remainingMinutes > 1 ? "s" : ""); 
   }
 
-  return result.trim(); // Trim any leading/trailing whitespace
+  return result.trim(); 
 }
 function DetailRecette() {
   const { id } = useParams();
@@ -25,9 +25,7 @@ function DetailRecette() {
   useEffect(() => {
     setRecette(getRecette(id || ""));
   }, []);
-  if (!recette) {
-    return null;
-  }
+  if (!recette) return null;
   return (
     <div
       style={{
