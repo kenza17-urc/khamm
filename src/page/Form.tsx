@@ -2,21 +2,6 @@ import React from "react";
 import { useRecette } from "../lib/contexts/recetteContext";
 import FormRecette from "../component/Recette/FormRecette";
 
-interface Ingredients {
-  nom: string;
-  quantite: number;
-  unite: string;
-}
-
-interface Recipe {
-  titre: string;
-  image: string;
-  duree: number;
-  description: string;
-  tags: string[];
-  ingredients: Ingredients[];
-}
-
 interface FormInputs {
   titre: string;
   image: string;
