@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { randomId, useRecette } from "../../lib/contexts/recetteContext";
 import { Recette, Ingredient } from "../../lib/models/recette";

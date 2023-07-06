@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useRecette } from "../lib/contexts/recetteContext";
 import { Recette } from "../lib/models/recette";
+import '../component/Recette/DetailRecette.css'
 
 function minuteFormat(minutes: number) {
   const hours = Math.floor(minutes / 60);
@@ -27,35 +28,33 @@ function DetailRecette() {
   }, []);
   if (!recette) return null;
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        gap: "20px",
-      }}
-    >
+    <div className="detail-recette-container">
       <img
+        className="detail-recette-image"
         src={recette.image}
         alt={recette.titre}
-        style={{ width: "100%", objectFit: "cover", height: "400px" }}
       />
-      <h2>{recette.titre}</h2>
-      <p>{recette.description}</p>
-      <b>{minuteFormat(recette.duree)}</b>
-      <p>
-        <b>Categories :</b> {recette.tags.join(", ")}
+      <h2 className="detail-recette-title">{recette.titre}</h2>
+      <p className="detail-recette-description">{recette.description}</p>
+      <b className="detail-recette-duration">{minuteFormat(recette.duree)}</b>
+      <p className="detail-recette-categories">
+        <b>Categories:</b> {recette.tags.join(", ")}
       </p>
-      <p>
-        <b>Ingredients :</b>{" "}
-        {recette.ingredients
-          .map((ing) => `${ing.nom} ${ing.quantite} ${ing.unite}`)
-          .join(", ")}
+      <p className="detail-recette-ingredients">
+        <b>Ingredients:</b>{" "}
+        {recette.ingredients.map((ing, i) => (
+          <span key={i} className="detail-recette-ingredient-item">
+            <span className="detail-recette-ingredient-name">{ing.nom}</span>
+            <span className="detail-recette-ingredient-quantity">
+              {ing.quantite}
+            </span>
+            <span className="detail-recette-ingredient-unit">{ing.unite}</span>
+          </span>
+        ))}
       </p>
     </div>
   );
+  
 }
 
 export default DetailRecette;

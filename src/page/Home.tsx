@@ -12,7 +12,7 @@ const Home = () => {
           backgroundPosition: "center",
           width: "100%",
           height: "50vh",
-          
+          marginTop : "10px",
         }}
       ></div>
       <h1>Recette</h1>
