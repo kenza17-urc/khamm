@@ -48,7 +48,7 @@ export const RecetteProvider = ({
       description: "Savourez des fajitas au bœuf chaud grésillant avec des poivrons et des oignons colorés. Servez avec des tortillas chaudes et vos garnitures préférées.",
       image:
         "https://www.deliciousmagazine.co.uk/wp-content/uploads/2018/08/487737-1-eng-GB_apple-crisps-768x902.jpg",
-      duree: 10,
+      duree: 5,
       tags: ["boeuf", "fajitas"],
       ingredients: [
        
@@ -60,7 +60,7 @@ export const RecetteProvider = ({
       description: "Des barres de gâteau au fromage acidulées au citron garnies d'une généreuse quantité de myrtilles juteuses. La gâterie parfaite pour l'été !",
       image:
         "https://i.pinimg.com/736x/88/72/eb/8872ebe6074bb3c8a4105034d0bd9b64.jpg",
-      duree: 10,
+      duree: 20,
       tags: ["gateau", "citron"],
       ingredients: [
        
@@ -72,7 +72,7 @@ export const RecetteProvider = ({
       description: "Une salade grecque rafraîchissante regorgeant de saveurs de légumes croquants, de fromage feta acidulé et d'une vinaigrette maison piquante",
       image:
         "https://i.pinimg.com/originals/1f/d1/47/1fd14704514fbce51a0dc8e074e70ac9.jpg",
-      duree: 10,
+      duree: 5,
       tags: ["salade", "piquante"],
       ingredients: [
         
@@ -85,7 +85,7 @@ export const RecetteProvider = ({
       image:
         "https://i.pinimg.com/736x/cf/37/a1/cf37a164700ddac6f84c545bacc2f121.jpg",
       duree: 10,
-      tags: ["CURRY", "thai"],
+      tags: ["Curry", "thai"],
       ingredients: [
 
 

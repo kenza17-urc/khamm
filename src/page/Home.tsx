@@ -62,11 +62,11 @@ const Home = () => {
             <input
          
               type="checkbox"
-              value="pomme"
+              value="Curry"
               checked={filterTags.includes("tag2")}
               onChange={handleTagChange}
             />{" "}
-            pomme
+            Curry
           </label>
 
           <label>
