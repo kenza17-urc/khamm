@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useState } from "react";
 import FormRecette from "../component/Recette/FormRecette";
 
@@ -8,7 +8,7 @@ interface Recipe {
   time: number;
 }
 
-const Home = () => {
+const Form = () => {
   const [recettes, setRecettes] = useState<Recipe[]>([]);
 
   const deleteRecipe = (index: number) => {
@@ -29,4 +29,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Form;
