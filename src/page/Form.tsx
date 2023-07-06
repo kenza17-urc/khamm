@@ -1,25 +1,41 @@
 import React from "react";
-import { useState } from "react";
+import { useRecette } from "../lib/contexts/recetteContext";
 import FormRecette from "../component/Recette/FormRecette";
 
-interface Recipe {
-  name: string;
-  photo: string;
-  time: number;
+interface Ingredients {
+  nom: string;
+  quantite: number;
+  unite: string;
 }
 
-const Home = () => {
-  const [recettes, setRecettes] = useState<Recipe[]>([]);
+interface Recipe {
+  titre: string;
+  image: string;
+  duree: number;
+  description: string;
+  tags: string[];
+  ingredients: Ingredients[];
+}
 
-  const deleteRecipe = (index: number) => {
-    const newRecettes = [...recettes];
-    newRecettes.splice(index, 1);
-    setRecettes(newRecettes);
-  };
+interface FormInputs {
+  titre: string;
+  image: string;
+  duree: number;
+}
 
-  const addRecipe = (recipe: Recipe) => {
-    const newRecettes = [...recettes, recipe];
-    setRecettes(newRecettes);
+const Form = () => {
+  const { recettes, addRecette } = useRecette();
+
+  const addRecipe = (data: FormInputs) => {
+    addRecette({
+      titre: data.titre,
+      image: data.image,
+      duree: data.duree,
+      description: "",
+      tags: [],
+      ingredients: [],
+    });
+    console.log(recettes)
   };
 
   return (
@@ -29,4 +45,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Form;

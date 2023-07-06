@@ -2,9 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 interface FormInputs {
-    name: string;
-    photo: string;
-    time: number;
+    titre: string;
+    image: string;
+    duree: number;
 }
 
 interface FormProps {
@@ -21,9 +21,9 @@ const FormRecette = ({ onSubmit }: FormProps) => {
 
     return (
         <form onSubmit={handleSubmit(submitForm)}>
-            <input style={{marginRight: "10px"}} {...register("name", { required: true })} placeholder="Nom" />
-            <input style={{marginRight: "10px"}} {...register("photo", { required: true })} placeholder="Lien photo" />
-            <input style={{marginRight: "10px"}} {...register("time", { required: true })} placeholder="Temps de préparation" type="number" />
+            <input style={{marginRight: "10px"}} {...register("titre", { required: true })} placeholder="Nom" />
+            <input style={{marginRight: "10px"}} {...register("image", { required: true })} placeholder="Lien photo" />
+            <input style={{marginRight: "10px"}} {...register("duree", { required: true })} placeholder="Temps de préparation" type="number" />
             <input type="submit" value="Valider" />
         </form>
     );
