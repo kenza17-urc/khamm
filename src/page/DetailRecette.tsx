@@ -9,14 +9,14 @@ function minuteFormat(minutes: number) {
 
   let result = "";
   if (hours > 0) {
-    result += hours + " heure" + (hours > 1 ? "s" : ""); // Include hours in the string
+    result += hours + " heure" + (hours > 1 ? "s" : ""); 
   }
   if (remainingMinutes > 0) {
     result +=
-      " " + remainingMinutes + " minute" + (remainingMinutes > 1 ? "s" : ""); // Include remaining minutes in the string
+      " " + remainingMinutes + " minute" + (remainingMinutes > 1 ? "s" : ""); 
   }
 
-  return result.trim(); // Trim any leading/trailing whitespace
+  return result.trim(); 
 }
 function DetailRecette() {
   const { id } = useParams();
