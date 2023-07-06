@@ -35,7 +35,7 @@ const Home = () => {
       ></div>
       <h1>Recette</h1>
       <div>
-        <h2>Filter Recipes:</h2>
+        <h2>Filtre:</h2>
         <div>
           <label>
             Tags:
