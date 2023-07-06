@@ -21,6 +21,8 @@ interface FormInputs {
   titre: string;
   image: string;
   duree: number;
+  description: string;
+  tags: string[]
 }
 
 const Form = () => {
