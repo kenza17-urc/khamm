@@ -23,8 +23,6 @@ interface FormProps {
     onSubmit: (data: Recette) => void;
 }
 
-
-
 const FormRecette = ({ onSubmit }: FormProps) => {
     const { register, handleSubmit } = useForm<FormInputs>();
 

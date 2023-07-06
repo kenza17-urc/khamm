@@ -33,8 +33,8 @@ const Form = () => {
       titre: data.titre,
       image: data.image,
       duree: data.duree,
-      description: "",
-      tags: [],
+      description: data.description,
+      tags: data.tags,
       ingredients: [],
     });
     console.log(recettes)
