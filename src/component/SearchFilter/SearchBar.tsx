@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 interface SearchBarProps {
     onSearch: (searchTerm: string) => void;
@@ -8,12 +8,12 @@ const SearchBar = ({ onSearch }:SearchBarProps) => {
 
     const [searchTerm, setSearchTerm] = useState<string>("");
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(event.target.value);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value);
     }
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         onSearch(searchTerm);
     }
 
