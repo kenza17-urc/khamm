@@ -4,8 +4,8 @@ import { useRecette } from "../lib/contexts/recetteContext";
 import { Recette } from "../lib/models/recette";
 
 function minuteFormat(minutes: number) {
-  const hours = Math.floor(minutes / 60); // Get the whole number of hours
-  const remainingMinutes = minutes % 60; // Get the remaining minutes
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60; 
 
   let result = "";
   if (hours > 0) {
