@@ -25,9 +25,7 @@ function DetailRecette() {
   useEffect(() => {
     setRecette(getRecette(id || ""));
   }, []);
-  if (!recette) {
-    return null;
-  }
+  if (!recette) return null;
   return (
     <div
       style={{
