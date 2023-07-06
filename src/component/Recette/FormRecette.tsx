@@ -2,20 +2,18 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { randomId, useRecette } from "../../lib/contexts/recetteContext";
 import { Recette, Ingredient } from "../../lib/models/recette";
+import Select from "react-select";
 
-type RecetteForm = Omit<Omit<Recette, "id">, "ingredients"> & {
-  tags: string;
-};
+type RecetteForm = Omit<Omit<Omit<Recette, "id">, "ingredients">, "tags">;
+
+const defaultTags = ["fruits", "legumes", "viandes", "poissons"];
 const FormRecette = () => {
   const { register, handleSubmit, reset } = useForm<RecetteForm>();
   const { addRecette } = useRecette();
   const [ingredients, setIngredients] = useState<Partial<Ingredient>[]>([]);
+  const [tags, setTags] = useState<string[]>([]);
 
   const submitForm = (data: RecetteForm) => {
-    const tags = (data.tags ?? "")
-      .replace(/( )*,( )*/g, ",")
-      .split(",")
-      .map((tag) => tag.trim());
     const newData: Omit<Recette, "id"> = {
       ...data,
       tags,
@@ -79,12 +77,12 @@ const FormRecette = () => {
           {...register("duree", { required: true })}
           placeholder="durée"
         />
-        <input
-          style={{ marginRight: "10px" }}
-          type="text"
-          {...register("tags", { required: true })}
-          placeholder="tags"
-        />
+        <Select
+          name="tags"
+          isMulti
+          options={defaultTags.map((tag) => ({ label: tag, value: tag }))}
+          onChange={(tags) => setTags(tags ? tags.map((tag) => tag.value) : [])}
+        ></Select>
         <button type="button" onClick={addIngredient}>
           +
         </button>
