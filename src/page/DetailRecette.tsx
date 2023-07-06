@@ -69,7 +69,7 @@ function DetailRecette() {
             <span className="detail-recette-ingredient-quantity">
               {ing.quantite * persons}
             </span>
-            <span className="detail-recette-ingredient-unit">{parseInt(ing.unite,10) * persons}</span>
+            <span className="detail-recette-ingredient-unit">{parseInt(ing.unite,10) * persons}g</span>
           </span>
         ))}
       </p>
