@@ -39,14 +39,10 @@ const Home = () => {
           marginTop: "10px",
         }}
       ></div>
-      <h1>Nos Recette</h1>
-      <div className="bloc-filter">
-        <h2>Filter Recipes:</h2>
-
-        <div>
-          <SearchBar onSearch={handleSearch} />
-        </div>
-
+      <h1>Recette</h1>
+      <div className='bloc-filter'>
+        <h2>Filtre:</h2>
+        <div> <SearchBar onSearch={handleSearch} /></div>
         <div>
           <label>
             Par catégories:
