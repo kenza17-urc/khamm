@@ -7,7 +7,7 @@ type RecetteForm = Omit<Omit<Recette, "id">, "ingredients"> & {
   tags: string;
 };
 const FormRecette = () => {
-  const { register, handleSubmit } = useForm<RecetteForm>();
+  const { register, handleSubmit, reset } = useForm<RecetteForm>();
   const { addRecette } = useRecette();
   const [ingredients, setIngredients] = useState<Partial<Ingredient>[]>([]);
 
@@ -22,10 +22,13 @@ const FormRecette = () => {
       ingredients: ingredients as Ingredient[],
     };
 
-    console.log(newData);
     addRecette({
       ...newData,
     });
+
+    reset();
+
+    setIngredients([]);
   };
 
   const addIngredient = () => {
