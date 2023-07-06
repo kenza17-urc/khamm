@@ -21,8 +21,8 @@ const FormRecette = ({ onSubmit }: FormProps) => {
 
     return (
         <form onSubmit={handleSubmit(submitForm)}>
-            <input style={{marginRight: "10px"}} {...register("name", { required: true })} placeholder="Name" />
-            <input style={{marginRight: "10px"}} {...register("photo", { required: true })} placeholder="Score" type="number" />
+            <input style={{marginRight: "10px"}} {...register("name", { required: true })} placeholder="Nom" />
+            <input style={{marginRight: "10px"}} {...register("photo", { required: true })} placeholder="Lien photo" />
             <input style={{marginRight: "10px"}} {...register("time", { required: true })} placeholder="Temps de préparation" type="number" />
             <input type="submit" value="Valider" />
         </form>
