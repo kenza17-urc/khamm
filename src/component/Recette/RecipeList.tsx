@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useRecette } from "../../lib/contexts/recetteContext";
 import { Recette } from "../../lib/models/recette";
-// import { useEffect, useRef } from "react";
+
 import "./RecipeList.css";
 
 
@@ -17,10 +17,11 @@ const RecipeList: React.FC<RecipeListProps> = ({
   termSearch
 }) => {
 
-  
+
   const { recettes } = useRecette();
 
   const filteredRecipes = recettes.filter((recette: Recette) => {
+
 
     const isIncludedByTitle = recette.titre
       .toLowerCase()
@@ -35,10 +36,11 @@ const RecipeList: React.FC<RecipeListProps> = ({
     return isIncludedByTitle && isIncludedByTags && isMatchingDuration;
   });
 
+
   return (
     <div className="recipe-list-container">
       <h2 className="recipe-list-heading">Liste des recettes</h2>
-
+      
       <div className="recipe-list">
       {
           filteredRecipes.map((recette: Recette) => {

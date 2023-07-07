@@ -38,60 +38,29 @@ const Home = () => {
           backgroundPosition: "center",
           width: "100%",
           height: "50vh",
-          marginTop: "10px",
-        }}
-      ></div>
+          marginTop: "10px",}}>
+
+      </div>
       <h1>Recette</h1>
       <div className='bloc-filter'>
         <h2>Filtre:</h2>
         <div> <SearchBar onSearch={handleSearch} /></div>
         <div>
-          <label>
-            Par catégories:
-            <input
-         
-              type="checkbox"
-              value="citron"
-              checked={filterTags.includes("tag1")}
-              onChange={handleTagChange}
-            />{" "}
-            citron
-          </label>
+          <label>Par catégories:</label>
 
-          <label>
-            <input
-         
-              type="checkbox"
-              value="Curry"
-              checked={filterTags.includes("tag2")}
-              onChange={handleTagChange}
-            />{" "}
-            Curry
-          </label>
+            <input type="checkbox"  value="citron" onChange={handleTagChange}/>
+            <label>citron</label>
 
-          <label>
-            <input
-           
-              type="checkbox"
-              value="salade"
-              checked={filterTags.includes("tag3")}
-              onChange={handleTagChange}
-            />{" "}
-            salade
-          </label>
+            <input type="checkbox" value="Curry" onChange={handleTagChange}/>
+            <label> Curry</label>  
 
+            <input type="checkbox" value="salade" onChange={handleTagChange} />
+            <label> salade </label>
         </div>
 
         <div>
-          <label>
-            Par durée (minutes):
-            <input
-            
-              type="number"
-              value={filterDuration || ""}
-              onChange={handleDurationChange}
-            />
-          </label>
+          <label> Par durée (minutes):</label>
+            <input type="number" value={filterDuration || ""} onChange={handleDurationChange} />
         </div>
 
       </div>
