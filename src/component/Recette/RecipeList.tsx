@@ -47,7 +47,7 @@ const RecipeList: React.FC<RecipeListProps> = ({
               <Link to={"recette/" + recette.id} key={recette.id} className="recipe-card">
                 <img className="recipe-image" src={recette.image} alt={recette.titre} />
                 <h3 className="recipe-title">{recette.titre}</h3>
-                <p className="recipe-description">{recette.description}</p>
+                <p className="recipe-duree">{recette.duree} min</p>
               </Link>
             )
           })
