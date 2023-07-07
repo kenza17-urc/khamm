@@ -28,6 +28,7 @@ const Home = () => {
     const duration = parseInt(e.target.value);
     setFilterDuration(duration);
   };
+  
 
   return (
     <div>
