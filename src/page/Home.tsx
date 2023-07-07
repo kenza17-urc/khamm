@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import RecipeList from "../component/Recette/RecipeList";
 import backgroundImage from "../lib/img/19.jpg";
 import SearchBar from "../component/SearchFilter/SearchBar";
+
 const Home = () => {
   const [filterTags, setFilterTags] = useState<string[]>([]);
   const [filterDuration, setFilterDuration] = useState<number | null>(null);
   const [termSearch, setTermSearch] = useState<string>("");
+
 
   const handleSearch = (searchTerm: string) => {
     console.log(`Searching for ${searchTerm}`);
@@ -48,6 +50,7 @@ const Home = () => {
           <label>
             Par catégories:
             <input
+         
               type="checkbox"
               value="citron"
               checked={filterTags.includes("tag1")}
@@ -58,6 +61,7 @@ const Home = () => {
 
           <label>
             <input
+         
               type="checkbox"
               value="Curry"
               checked={filterTags.includes("tag2")}
@@ -68,6 +72,7 @@ const Home = () => {
 
           <label>
             <input
+           
               type="checkbox"
               value="salade"
               checked={filterTags.includes("tag3")}
@@ -82,6 +87,7 @@ const Home = () => {
           <label>
             Par durée (minutes):
             <input
+            
               type="number"
               value={filterDuration || ""}
               onChange={handleDurationChange}
